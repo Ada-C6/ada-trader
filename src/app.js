@@ -51,7 +51,8 @@ const simulate = function(quote) {
 
 $(document).ready(function() {
   var appView = new ApplicationView({
-    el: '#application'
+    el: '#application',
+    stockData: stockData
   });
 
   appView.render();
