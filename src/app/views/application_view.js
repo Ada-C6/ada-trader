@@ -1,4 +1,8 @@
+import $ from 'jquery';
 import Backbone from 'backbone';
+import _ from 'underscore';
+
+import QuoteView from 'app/views/quote_view';
 
 const ApplicationView = Backbone.View.extend({
   initialize: function() {
@@ -12,3 +16,5 @@ const ApplicationView = Backbone.View.extend({
 });
 
 export default ApplicationView;
+
+// equivalent of task list view
