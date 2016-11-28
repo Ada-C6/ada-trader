@@ -10,15 +10,18 @@ import Backbone from 'backbone';
 // Use the compiled template to render HTML for a single quote, using the quote data stored by initialize.
 
 var QuoteView = Backbone.View.extend({
-  initialize: function(quote) {
-    this.symbol = quote.symbol;
-    this.price = quote.price;
-    this.about = quote.about;
-    this.template = quote.template; // Compile an Underscore template using the script named tmpl-quote-view (which is already defined in index.html).
+  initialize: function(options) {
+    // options = an element in a list of quotes
+    this.quote = options.quote;
+    // these will be properties of the quote object
+    // this.symbol = quote.symbol;
+    // this.price = quote.price;
+    // this.about = quote.about;
+    this.template = options.template; // Compile an Underscore template using the script named tmpl-quote-view (which is already defined in index.html).
   },
 
   render: function() {
-    var html = this.template({price: this.price});
+    var html = this.template({quote: this.quote});
     this.$el.html(html);
     return this;
   }
