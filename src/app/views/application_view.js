@@ -1,7 +1,7 @@
 import Backbone from 'backbone';
 
 const ApplicationView = Backbone.View.extend({
-  initialize: function() {
+  initialize: function(options) {
   },
 
   render: function() {
