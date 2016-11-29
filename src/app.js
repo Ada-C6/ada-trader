@@ -36,15 +36,11 @@ var stockData = [
 
 $(document).ready(function() {
   var appView = new ApplicationView({
-    el: '#application'
+    el: $('#application'),
+    quote: stockData
   });
 
   appView.render();
-
-  var quoteView = new QuoteView({
-    quote: stockData[0],
-    template: _.template()
-  });
 
   // setInterval(function() {
   //   // Call simulate() on each quote in the ApplicationView
