@@ -3,17 +3,21 @@ import _ from 'underscore';
 import Backbone from 'backbone';
 
 var QuoteView = Backbone.View.extend({
-  initialize: function(stock) {
-    this.stock = stock;
+  initialize: function(quote, template) {
+    this.quote = quote;
 
-    // Compile a Underscore template
-    this.template = _.template($('#tmpl-quote-view').html());
+    if (!template) {
+      // Compile a Underscore template
+      this.template = _.template($('#tmpl-quote-view').html());
+    } else {
+      this.template = template;
+    }
   },
 
   render: function() {
     var html = this.template({
-      symbol: this.stock.symbol,
-      price: this.stock.price,
+      symbol: this.quote.symbol,
+      price: this.quote.price,
     });
 
     this.$el.html(html);

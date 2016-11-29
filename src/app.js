@@ -1,9 +1,8 @@
 import $ from 'jquery';
 import _ from 'underscore';
 import ApplicationView from 'app/views/application_view';
-import QuoteView from 'app/views/quote_view';
 
-var exampleStocks = [
+var exampleQuotes = [
   {
     symbol: 'HUMOR', price: 88.50, desc: "Cristal's HumorUs capstone"
   },
@@ -50,7 +49,8 @@ const simulate = function(quote) {
 
 $(document).ready(function() {
   var appView = new ApplicationView({
-    el: '#application'
+    el: '#application',
+    quoteList: exampleQuotes,
   });
 
   appView.render();
