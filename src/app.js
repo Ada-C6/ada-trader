@@ -2,6 +2,38 @@ import $ from 'jquery';
 import _ from 'underscore';
 import ApplicationView from 'app/views/application_view';
 
+
+var stockData = [
+  {
+    symbol: 'HUMOR',
+    price: 8850
+  }, {
+    symbol: 'CLOTH',
+    price: '8170'
+  }, {
+    symbol: 'HABIT',
+    price: 9980
+  }, {
+      symbol: 'SUPER',
+      price: 8310
+  }, {
+      symbol: 'INGRD',
+      price: 7940
+  }, {
+      symbol: 'MXTPE',
+      price: 10920
+  }, {
+      symbol: 'CNTAR',
+      price: 9070
+  }, {
+      symbol: 'EVCLR',
+      price: 10190
+  },  {
+      symbol: 'FUZZY',
+      price: 8860
+  }
+];
+
 const simulate = function(quote) {
   // Calculate a random price movement
   const maxChange = 1.00;
@@ -19,12 +51,16 @@ const simulate = function(quote) {
 
 $(document).ready(function() {
   var appView = new ApplicationView({
-    el: '#application'
+    el: '#application',
+    stockData: stockData
   });
 
   appView.render();
 
   setInterval(function() {
-    // Call simulate() on each quote in the ApplicationView
+    // Call simulate() on each quote in the ApplicationView --> on the QUOTE LIST
+    appView.quoteList.forEach(function(stock) {
+      simulate(stock);
+    });
   }, 1000);
 });
