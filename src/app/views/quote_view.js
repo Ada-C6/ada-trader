@@ -5,7 +5,7 @@ var QuoteView = Backbone.View.extend({
   },
 
   render: function() {
-    var html = this.template({quote: this.quote})
+    var html = this.template(this.quote)
     this.$el.html(html);
 
     // Enable chained calls
