@@ -1,6 +1,20 @@
 import $ from 'jquery';
 import _ from 'underscore';
 import ApplicationView from 'app/views/application_view';
+import QuoteView from 'app/views/quote_view';
+
+var quoteData = [
+  {
+    symbol: 'HUMOR',
+    price: 100.00
+  }, {
+    symbol: 'CLOTH',
+    price: 70.00
+  }, {
+    symbol: 'ROCK',
+    price: 30.00
+  }
+];
 
 const simulate = function(quote) {
   // Calculate a random price movement
@@ -18,13 +32,15 @@ const simulate = function(quote) {
 };
 
 $(document).ready(function() {
+
   var appView = new ApplicationView({
-    el: '#application'
+    el: $('#application'),
+    quoteData: quoteData
   });
 
   appView.render();
 
-  setInterval(function() {
-    // Call simulate() on each quote in the ApplicationView
-  }, 1000);
+  // setInterval(function() {
+  //   // Call simulate() on each quote in the ApplicationView
+  // }, 1000);
 });
