@@ -1,6 +1,6 @@
 import Backbone from 'backbone';
 import _ from 'underscore';
-
+import $ from 'jquery';
 
 var QuoteView = Backbone.View.extend({
   initialize: function(options) {
@@ -9,7 +9,7 @@ var QuoteView = Backbone.View.extend({
   },
 
   render: function() {
-    var html = this.template({quote: this.quote});
+    var html = this.template({symbol: this.quote.symbol, price: this.quote.price});
     this.$el.html(html);
 
     // Enable chained calls
@@ -17,5 +17,4 @@ var QuoteView = Backbone.View.extend({
   }
 });
 
-// task_view.js
 export default QuoteView;
