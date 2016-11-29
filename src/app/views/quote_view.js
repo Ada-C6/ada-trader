@@ -1,5 +1,5 @@
 import Backbone from 'backbone';
-import _ from 'underscore';
+// import _ from 'underscore';
 
 // Have an initialize function that should:
 // Receive and store a JavaScript object with quote data (symbol and price). See Example Stocks for inspiration. (Symbol: HUMOR, Price: $88.50 - Cristal's HumorUs capstone)
@@ -18,7 +18,7 @@ var QuoteView = Backbone.View.extend({
     // this.symbol = quote.symbol;
     // this.price = quote.price;
     // this.about = quote.about;
-    this.template = _.template($('#tmpl-quote-view').html()); // Compile an Underscore template using the script named tmpl-quote-view (which is already defined in index.html).
+    this.template = options.template; // Compile an Underscore template using the script named tmpl-quote-view (which is already defined in index.html).
   },
 
   render: function() {
