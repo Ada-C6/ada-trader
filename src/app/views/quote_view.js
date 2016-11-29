@@ -28,6 +28,7 @@ var QuoteView = Backbone.View.extend({
   },
   buyStock: function(event){
     this.quote.price += 1.00;
+    console.log('BOUGHT, ' + this.quote.price);
     this.render();
   },
   sellStock: function(event){
@@ -35,6 +36,7 @@ var QuoteView = Backbone.View.extend({
     if (this.quote.price < 0.00){
       this.quote.price = 0.00;
     }
+    console.log('SOLD, ' + this.quote.price);
     this.render();
   }
 });
