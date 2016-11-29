@@ -9,6 +9,11 @@ var QuoteView = Backbone.View.extend({
   initialize: function(options){
     this.quote = options.quote;
     this.template = options.template;
+    this.on('change:price', this.updatePrice);
+  },
+  updatePrice: function(change){
+    this.quote.price += change;
+    this.render();
   },
   render: function(){
     this.$el.html(this.template({symbol: this.quote.symbol, price: this.quote.price}));

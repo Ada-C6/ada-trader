@@ -15,6 +15,7 @@ const simulate = function(quote) {
 
   // Actually trigger the change
   quote.trigger('change:price', change);
+  console.log(change);
 };
 
 var stocks = [{symbol: "HUMOR", price: 88.50}, {symbol: "CLOTH", price: 81.70}, {symbol: "HABIT", price: 98.00}, {symbol: "SUPER", price: 83.10}]
@@ -27,7 +28,10 @@ $(document).ready(function() {
 
   appView.render();
 
-  // setInterval(function() {
-  //   // Call simulate() on each quote in the ApplicationView
-  // }, 1000);
+  setInterval(function() {
+    // Call simulate() on each quote in the ApplicationView
+    for(var i = 0; i < appView.quoteList.length; i++){
+      simulate(appView.quoteList[i]);
+    }
+  }, 1000);
 });
