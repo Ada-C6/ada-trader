@@ -1,4 +1,6 @@
 import Backbone from 'backbone';
+import $ from 'jquery';
+import _ from 'underscore';
 
 const QuoteView = Backbone.View.extend({
   initialize: function(options) {
@@ -8,6 +10,11 @@ const QuoteView = Backbone.View.extend({
     this.price  = this.stock.price / 100;
 
     this.template = options.template;
+
+    this.on("change:price", function(change) {
+    this.price += change;
+    this.render();
+    });
   },
 
   render: function() {

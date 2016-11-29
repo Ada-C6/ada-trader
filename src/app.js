@@ -58,6 +58,9 @@ $(document).ready(function() {
   appView.render();
 
   setInterval(function() {
-    // Call simulate() on each quote in the ApplicationView
+    // Call simulate() on each quote in the ApplicationView --> on the QUOTE LIST
+    appView.quoteList.forEach(function(stock) {
+      simulate(stock);
+    });
   }, 1000);
 });
