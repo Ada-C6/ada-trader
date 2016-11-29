@@ -1,6 +1,20 @@
 import $ from 'jquery';
 import _ from 'underscore';
+import Backbone from 'backbone';
 import ApplicationView from 'app/views/application_view';
+
+var quoteData = [
+  {
+    symbol: 'HUMOR',
+    price: 88.50
+  }, {
+    symbol: 'CLOTH',
+    price: 81.90
+  }, {
+    symbol: 'HABIT',
+    price: 98.00
+  }
+];
 
 const simulate = function(quote) {
   // Calculate a random price movement
@@ -19,7 +33,8 @@ const simulate = function(quote) {
 
 $(document).ready(function() {
   var appView = new ApplicationView({
-    el: '#application'
+    el: '#application',
+    quoteData: quoteData
   });
 
   appView.render();
