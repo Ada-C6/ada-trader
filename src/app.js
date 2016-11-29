@@ -1,47 +1,46 @@
 import $ from 'jquery';
 import _ from 'underscore';
 import ApplicationView from 'app/views/application_view';
+import QuoteView from 'app/views/quote_view';
 
 var Stocks = [
   {
-    symbol:"HUMOR"
+    symbol:"HUMOR",
     price: 88.50
   },
   {
-    symbol: "CLOTH"
+    symbol: "CLOTH",
     price: 81.70
   },
   {
-    symbol: "HABIT"
+    symbol: "HABIT",
     price: 98.00
   },
   {
-    symbol: "SUPER"
+    symbol: "SUPER",
     price: 83.10
   },
   {
-    symbol: "INGRD"
+    symbol: "INGRD",
     price: 79.40
   },
   {
-    symbol: "MXTPE"
+    symbol: "MXTPE",
     price: 109.20
   },
   {
-    symbol: "CNTAR"
+    symbol: "CNTAR",
     price: 90.70
   },
   {
-    symbol: "EVCLR"
+    symbol: "EVCLR",
     price: 101.90
   },
   {
-    symbol: "FUZZY"
+    symbol: "FUZZY",
     price: 88.60
   },
-]
-
-
+];
 
 const simulate = function(quote) {
   // Calculate a random price movement
@@ -58,14 +57,29 @@ const simulate = function(quote) {
   quote.trigger('change:price', change);
 };
 
+
 $(document).ready(function() {
-  var appView = new ApplicationView({
-    el: '#application'
+  var quoteTemplate = _.template($('#tmpl-quote-view').html());
+
+  var quoteElement = $('.quotes');
+
+  var oneQuote = new QuoteView({
+    quote: Stocks[0],
+    template: quoteTemplate
   });
 
-  appView.render();
-
-  setInterval(function() {
-    // Call simulate() on each quote in the ApplicationView
-  }, 1000);
+  quoteElement.append(oneQuote.render().$el);
 });
+
+  //
+  // oneQuote.render();
+  //
+  // var appView = new ApplicationView({
+  //   el: '#application'
+  // });
+  //
+  // appView.render();
+  //
+  // setInterval(function() {
+  //   // Call simulate() on each quote in the ApplicationView
+  // }, 1000);
