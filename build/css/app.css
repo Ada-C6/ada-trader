@@ -47,3 +47,7 @@ header h1 {
   margin-bottom: 0.25em;
   border-radius: 3px;
 }
+
+.all-buttons {
+  text-align: center;
+}

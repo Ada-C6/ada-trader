@@ -15,7 +15,6 @@ const simulate = function(quote) {
 
   // Actually trigger the change
   quote.trigger('change:price', change);
-  console.log(change);
 };
 
 var stocks = [{symbol: "HUMOR", price: 88.50}, {symbol: "CLOTH", price: 81.70}, {symbol: "HABIT", price: 98.00}, {symbol: "SUPER", price: 83.10}]

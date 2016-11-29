@@ -22,6 +22,22 @@ var ApplicationView = Backbone.View.extend({
     }
 
     return this;
+  },
+  events: {
+    'click .btn-buy-all': 'buyAllStock',
+    'click .btn-sell-all': 'sellAllStock'
+  },
+  buyAllStock: function(event) {
+    for (var i = 0; i < this.quoteList.length; i++){
+      this.quoteList[i].buyStock();
+    }
+    this.render();
+  },
+  sellAllStock: function(event) {
+    for (var i = 0; i < this.quoteList.length; i++){
+      this.quoteList[i].sellStock();
+    }
+    this.render();
   }
 });
 
