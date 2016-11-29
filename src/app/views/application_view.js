@@ -14,9 +14,10 @@ const ApplicationView = Backbone.View.extend({
     // Keep track of the <ul> element
     this.quoteElement = this.$('.quotes');
 
-    // Create a TaskView for each task
+    // Create a QuoteView for each task
     this.quotesList = [];
-    this.Stocks.forEach(function(quote) { //<---- pick up here, translating to quotes rather than tasks
+
+    this.Stocks.forEach(function(quote) {
       var quote = new QuoteView({
         quote: quote,
         template: this.quoteTemplate
