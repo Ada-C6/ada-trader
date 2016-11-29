@@ -24,13 +24,8 @@ const ApplicationView = Backbone.View.extend({
     });
     this.quoteList.push(quoteCard);
   }, this); // bind `this` so it's available inside forEach
+  },
 
-//   // Keep track of our form input fields
-//   this.input = {
-//   title: this.$('.new-task input[name="title"]'),
-//   description: this.$('.new-task input[name="description"]')
-// };
-},
 
 render: function() {
   // Make sure the list in the DOM is empty
@@ -48,6 +43,7 @@ render: function() {
 
   return this; // enable chained calls
 }
+
 });
 
 export default ApplicationView;
