@@ -10,7 +10,23 @@ var QuoteView = Backbone.View.extend({
 
     // Enable chained calls
     return this;
+  },
+
+  events: {
+    'click .btn-buy': 'buyStock',
+    'click .btn-sell': 'sellStock'
+  },
+
+  buyStock: function() {
+    this.quote.price += 1.00
+    this.render();
+  },
+
+  sellStock: function() {
+    this.quote.price -= 1.00
+    this.render();
   }
+
 });
 
 export default QuoteView;
