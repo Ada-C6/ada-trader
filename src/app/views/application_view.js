@@ -23,15 +23,7 @@ const ApplicationView = Backbone.View.extend({
       });
       this.stockList.push(card);
     }, this);
-
-    // // Keep track of our form input fields
-    // this.input = {
-    //   title: this.$('.new-task input[name="title"]'),
-    //   description: this.$('.new-task input[name="description"]')
-    // };
   }, // end initialize
-
-
 
 
   render: function() {
@@ -49,7 +41,8 @@ const ApplicationView = Backbone.View.extend({
     }, this);
 
     return this; // enable chained calls
-  }, // end render
+  } // end render
+
 }); // end Application View
 
 export default ApplicationView;
