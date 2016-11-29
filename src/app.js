@@ -60,5 +60,8 @@ $(document).ready(function() {
 
   setInterval(function() {
     // Call simulate() on each quote in the ApplicationView
+    // appView.stockList.forEach(function(stock){
+    //   simulate(stock);
+    // })
   }, 1000);
 });

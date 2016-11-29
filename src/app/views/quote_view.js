@@ -6,10 +6,18 @@ var QuoteView = Backbone.View.extend({
   initialize: function(options){
     this.stock = options.stock;
     this.template = options.template;
+
+    // this.addEventListeners('change:price', updatePrice, change)
+    //
+    // updatePrice: function(price) {
+    //   this.stock.price += price;
+    //   this.render();
+    // }
+
   },
 
   render: function(){
-    var html = this.template({stock: this.stock})
+    var html = this.template(this.stock)
     this.$el.html(html);
 
     // Enable chained calls
@@ -30,8 +38,7 @@ var QuoteView = Backbone.View.extend({
   lowerPrice: function() {
     this.stock.price -= 1.00;
     this.render();
-  },
-
+  }
 });
 
 export default QuoteView;
