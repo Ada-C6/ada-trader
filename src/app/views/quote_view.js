@@ -14,29 +14,24 @@ var QuoteView = Backbone.View.extend({
 
     // Enable chained calls
     return this;
-  }
+  },
+
+  events: {
+    // format is ====>  "event css-selector": 'functionName'
+    'click .btn-sell': 'lowerPrice', // Want this to be sumbit and reference the form so we can access the input information
+    'click .btn-buy ': 'raisePrice'
+  }, // end events
+
+  raisePrice: function() {
+    this.stock.price += 1.00;
+    this.render();
+  },
+
+  lowerPrice: function() {
+    this.stock.price -= 1.00;
+    this.render();
+  },
+
 });
 
 export default QuoteView;
-
-
-
-
-// var TaskView = Backbone.View.extend({
-//
-//   // initialize takes in parameters (needs to be in here)
-//   initialize: function(options) {
-//     this.task = options.task;
-//     this.template = options.template;
-//   },
-//
-//
-//   // render is another backbone thing
-//   render: function() {
-//     var html = this.template({task: this.task})
-//     this.$el.html(html);
-//
-//     // Enable chained calls
-//     return this;
-//   }
-// });
