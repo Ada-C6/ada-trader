@@ -1,5 +1,7 @@
 import $ from 'jquery';
-import _ from 'underscore';
+// import _ from 'underscore';
+
+import QuoteView from 'app/views/quote_view';
 import ApplicationView from 'app/views/application_view';
 
 const simulate = function(quote) {
@@ -17,7 +19,7 @@ const simulate = function(quote) {
   quote.trigger('change:price', change);
 };
 
-quoteData = [
+var quoteData = [
   {
     symbol: "HUMOR",
     price: 88.50,
