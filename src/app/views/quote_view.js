@@ -15,3 +15,5 @@ var QuoteView = Backbone.View.extend({
     return this;
   }
 });
+
+export default QuoteView;
