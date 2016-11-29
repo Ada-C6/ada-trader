@@ -69,17 +69,15 @@ $(document).ready(function() {
   });
 
   quoteElement.append(oneQuote.render().$el);
-});
 
-  //
-  // oneQuote.render();
-  //
-  // var appView = new ApplicationView({
-  //   el: '#application'
-  // });
-  //
-  // appView.render();
-  //
-  // setInterval(function() {
-  //   // Call simulate() on each quote in the ApplicationView
-  // }, 1000);
+  var appView = new ApplicationView({
+    el: '#application',
+    Stocks: Stocks
+  });
+
+  appView.render();
+
+  setInterval(function() {
+    // Call simulate() on each quote in the ApplicationView
+  }, 1000);
+});
