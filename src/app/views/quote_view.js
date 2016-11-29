@@ -7,7 +7,12 @@ var QuoteView = Backbone.View.extend({  // Keeps track of one task
     this.symbol = options.symbol;
     this.price = options.price;
     this.template = options.template;
-    this.price.on('change:price');
+    this.on('change:price', this.changePrice);
+  },
+
+  changePrice: function(change) {
+    this.price += change;
+    this.render();
   },
 
   render: function() {

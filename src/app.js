@@ -58,6 +58,10 @@ $(document).ready(function() {
   appView.render();
 
   setInterval(function() {
-    // Call simulate() on each quote in the ApplicationView
+    appView.quoteList.forEach(function(item) {
+      simulate(item);
+    });
+    // var changePrice = new Backbone.View();
+    // simulate(changeFunction(changePrice));
   }, 1000);
 });
