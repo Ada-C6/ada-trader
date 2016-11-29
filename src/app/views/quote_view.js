@@ -9,11 +9,12 @@ var QuoteView = Backbone.View.extend({
 
     // this.addEventListeners('change:price', updatePrice, change)
     //
-    // updatePrice: function(price) {
-    //   this.stock.price += price;
-    //   this.render();
-    // }
+    var updatePrice = function(price) {
+      this.stock.price += price;
+      this.render();
+    };
 
+    this.on('change:price', updatePrice, this);
   },
 
   render: function(){
