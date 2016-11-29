@@ -17,14 +17,20 @@ const simulate = function(quote) {
   quote.trigger('change:price', change);
 };
 
+var stocks = [{symbol: "HUMOR", price: 88.50}, {symbol: "CLOTH", price: 81.70}, {symbol: "HABIT", price: 98.00}, {symbol: "SUPER", price: 83.10}]
+
 $(document).ready(function() {
   var appView = new ApplicationView({
-    el: '#application'
+    el: '#application',
+    stocks: stocks
   });
 
   appView.render();
 
   setInterval(function() {
     // Call simulate() on each quote in the ApplicationView
+    for(var i = 0; i < appView.quoteList.length; i++){
+      simulate(appView.quoteList[i]);
+    }
   }, 1000);
 });
