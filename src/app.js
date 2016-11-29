@@ -32,25 +32,15 @@ const simulate = function(quote) {
 };
 
 $(document).ready(function() {
-  var quoteTemplate = _.template($('#tmpl-quote-view').html());
-  var quoteListElement = $('.quotes');
-  var cardList = [];
-  quoteData.forEach(function(quote) {
-    var card = new QuoteView({
-      quote: quote,
-      template: quoteTemplate
-    });
-    cardList.push(card);
-    quoteListElement.append(card.render().$el);
+
+  var appView = new ApplicationView({
+    el: $('#application'),
+    quoteData: quoteData
   });
-});
-  // var appView = new ApplicationView({
-  //   el: '#application'
-  // });
-  //
-  // appView.render();
+
+  appView.render();
 
   // setInterval(function() {
   //   // Call simulate() on each quote in the ApplicationView
   // }, 1000);
-// });
+});
