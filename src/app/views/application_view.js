@@ -41,6 +41,8 @@ const ApplicationView = Backbone.View.extend({
 
     return this;
   } // end of render fx
+
+
 });
 
 export default ApplicationView;
