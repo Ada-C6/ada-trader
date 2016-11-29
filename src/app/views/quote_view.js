@@ -1,11 +1,9 @@
-//Have a QuoteView class extended from Backbone.View (in src/app/views/quote_view.js)
 import _ from 'underscore';
 import $ from 'jquery';
 
 var QuoteView = Backbone.View.extend({
   initialize: function(options) {
     this.quote = options.quote;
-    //Compile an Underscore template using the script named tmpl-quote-view
     this.template = options.template;
   },
 
@@ -22,19 +20,33 @@ var QuoteView = Backbone.View.extend({
   },
 
   priceIncrease : function(event) {
-  console.log("Buy!");
-  this.quote.price += 10;
-  this.render();
+    console.log("Buy!");
+    this.quote.price += 10;
+    this.render();
   },
 
   priceDecrease : function(event) {
-  console.log("Sell!");
-  this.quote.price -= 10;
-  this.render();
-  },
+    console.log("Sell!");
+    this.quote.price -= 10;
+    this.render();
+  }
 
 });
 
-
-
 export default QuoteView;
+
+
+
+// var price = this.quote.price
+//
+// var belowZeroCheck = function(){
+//
+//   console.log(price)
+//   console.log("checking for negatives")
+//   if ( price < 0) {
+//     console.log("negative!");
+//     $(".btn-sell").hide();
+//   }
+// }
+//
+// belowZeroCheck();
