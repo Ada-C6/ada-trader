@@ -26,10 +26,10 @@ const ApplicationView = Backbone.View.extend({
 
     // Loop through the data assigned to this view
     this.quoteViewList.forEach(function(quoteView) {
-      // Cause the task to render
+      // Cause the quote to render
       quoteView.render();
 
-      // Add that HTML to our task list
+      // Add that HTML to our quote list
       this.quoteListEl.append(quoteView.$el);
     }, this);
 
