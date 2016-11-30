@@ -1,5 +1,5 @@
 import $ from 'jquery';
-// import _ from 'underscore';
+import _ from 'underscore';
 
 import QuoteView from 'app/views/quote_view';
 import ApplicationView from 'app/views/application_view';
@@ -69,6 +69,11 @@ $(document).ready(function() {
   appView.render();
 
   setInterval(function() {
-    // Call simulate() on each quote in the ApplicationView
+    // Wave 3
+    var allQuotes = appView.cardList;
+    allQuotes.forEach(function(quote) {
+      console.log(quote);
+      simulate(quote);
+    });
   }, 1000);
 });

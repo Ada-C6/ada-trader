@@ -14,6 +14,11 @@ var QuoteView = Backbone.View.extend({
     // options = an element in a list of quotes
     this.quote = options.quote;
     this.template = options.template;
+    // Wave 3: set up an event listener
+    this.on('change:price', function priceCallback(change) {
+      this.quote.price += change;
+      this.render();
+    });
   },
 
   render: function() {
